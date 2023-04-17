@@ -56,7 +56,7 @@ resource "aws_security_group" "sg" {
 }
 
 #route53 records
-resource "aws_route53_record" "frontend" {
+resource "aws_route53_record" "record" {
   zone_id = "Z10378632KDOC11M5RXOI"
   name    = "${var.component}-${var.env}.devopspract.online"
   type    = "A"
