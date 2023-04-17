@@ -25,8 +25,8 @@ variable "instances" {
       name = "cart"
       type = "t3.micro"
     }
-    Mysql = {
-      name      = "Mysql"
+    mysql = {
+      name      = "mysql"
       type      = "t3.micro"
       password  = "Roboshop@1"
     }

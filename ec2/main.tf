@@ -67,7 +67,6 @@ resource "aws_route53_record" "frontend" {
 #variables
 variable "component" {}
 variable "instance_type" {}
-variable "sg_id" {}
 variable "env" {
   default = "dev"
 }
