@@ -21,6 +21,7 @@ resource "null_resource" "provisioner" {
       user      = "centos"
       password  = "DevOps321"
     }
+
     inline = [
       "git clone https://github.com/Praveen-Gaju/roboshop-shell.git",
       "cd roboshop-shell",
