@@ -46,7 +46,7 @@ variable "instances" {
       password  = "roboshop123"
     }
     dispatch = {
-      name      = "dispatch "
+      name      = "dispatch"
       type      = "t3.micro"
       password  = "roboshop123"
     }
