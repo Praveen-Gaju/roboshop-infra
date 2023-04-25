@@ -30,8 +30,6 @@ resource "null_resource" "provisioner" {
   }
 }
 
-
-
 #security group
 resource "aws_security_group" "sg" {
   name        = "${var.component}-${var.env}-sg"
@@ -52,7 +50,7 @@ resource "aws_security_group" "sg" {
     cidr_blocks      = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "${var.component}-${var.env}"
+    Name = "${var.component}-${var.env}-sg"
   }
 }
 
