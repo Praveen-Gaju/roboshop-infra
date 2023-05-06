@@ -29,10 +29,11 @@ resource "null_resource" "provisioner" {
 
     inline = [
       #below commands are used to execute using shell script
-      /*"git clone https://github.com/Praveen-Gaju/roboshop-shell.git",
-      "cd roboshop-shell",
-      "sudo bash ${var.component}.sh ${var.password}"*/
+#      "git clone https://github.com/Praveen-Gaju/roboshop-shell.git",
+#      "cd roboshop-shell",
+#      "sudo bash ${var.component}.sh ${var.password}"
       #below code is used to execute script using ansible
+      "sudo set-hostname ${var.component}",
       "ansible-pull -i localhost, -U https://github.com/Praveen-Gaju/roboshop-ansible.git roboshop.yml -e role_name=${var.component}"
     ]
   }
