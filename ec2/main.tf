@@ -25,7 +25,7 @@ resource "null_resource" "provisioner" {
 #      "cd roboshop-shell",
 #      "sudo bash ${var.component}.sh ${var.password}"
       #below code is used to execute script using ansible
-      "ansible-pull -i localhost, -U https://github.com/Praveen-Gaju/roboshop-ansible.git roboshop.yml -e role_name=${var.component}"
+      #"ansible-pull -i localhost, -U https://github.com/Praveen-Gaju/roboshop-ansible.git roboshop.yml -e role_name=${var.component} -e env={var.env}"
     ]
   }
 }
