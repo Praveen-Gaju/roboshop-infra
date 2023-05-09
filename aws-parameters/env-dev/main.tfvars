@@ -1,8 +1,7 @@
 parameters = [
-   { name: "test1", value = "Hello world", type: "String"}
-#  { name: "dev.frontend.catalogue_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"},
-#  { name: "dev.frontend.user_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"},
-#  { name: "dev.frontend.cart_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"},
-#  { name: "dev.frontend.shipping_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"},
-#  { name: "dev.frontend.payment_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"}
+   { name: "dev.frontend.catalogue_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"},
+   { name: "dev.frontend.user_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"},
+   { name: "dev.frontend.cart_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"},
+   { name: "dev.frontend.shipping_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"},
+   { name: "dev.frontend.payment_url", value = "http://catalogue-dev.devopspract.online:8080/", type: "String"}
 ]
