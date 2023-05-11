@@ -41,5 +41,7 @@ secrets = [
    { name= "dev.rabbitmq.amqp_pass", value = "roboshop123", type= "SecureString"},
    #dispatch service file secrets
    { name= "dev.dispatch.amqp_user", value = "roboshop", type= "SecureString"},
-   { name= "dev.dispatch.amqp_pass", value = "roboshop123", type= "SecureString"}
+   { name= "dev.dispatch.amqp_pass", value = "roboshop123", type= "SecureString"},
+   #shipping password
+   { name= "dev.shipping.password", value = "RoboShop@1", type= "SecureString"}
 ]
