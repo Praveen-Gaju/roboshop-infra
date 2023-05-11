@@ -32,7 +32,7 @@ parameters = [
 
 secrets = [
    #mysql password
-   { name= "dev.mysql.password", value = "Roboshop@1", type= "SecureString"},
+   { name= "dev.mysql.password", value = "RoboShop@1", type= "SecureString"},
    #payment service file secrets
    { name= "dev.payment.amqp_user", value = "roboshop", type= "SecureString"},
    { name= "dev.payment.amqp_pass", value = "roboshop123", type= "SecureString"},
