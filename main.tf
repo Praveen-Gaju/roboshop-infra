@@ -11,10 +11,10 @@ module "vpc" {
 
 }
 
-module "dodb" {
-  source                = "git::https://github.com/Praveen-Gaju/tf-module-docdb.git"
-  env                   = var.env
-  tags                  = var.tags
-  for_each              = var.docdb
-  engine                = each.value["engine"]
-}
+#module "dodb" {
+#  source                = "git::https://github.com/Praveen-Gaju/tf-module-docdb.git"
+#  env                   = var.env
+#  tags                  = var.tags
+#  for_each              = var.docdb
+#  engine                = each.value["engine"]
+#}
