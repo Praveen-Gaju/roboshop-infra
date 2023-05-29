@@ -46,5 +46,5 @@ secrets = [
    { name= "dev.shipping.password", value = "RoboShop@1", type= "SecureString"},
    #docdb username and password
    { name= "dev.docdb.user", value = "admin1", type= "SecureString"},
-   { name= "dev.docbd.password", value = "RoboShop1", type= "SecureString"}
+   { name= "dev.docdb.password", value = "RoboShop1", type= "SecureString"}
 ]
