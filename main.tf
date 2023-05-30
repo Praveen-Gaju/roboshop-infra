@@ -11,7 +11,7 @@ module "vpc" {
 
 }
 
-/*module "docdb" {
+module "docdb" {
   source                  = "git::https://github.com/Praveen-Gaju/tf-module-docdb.git"
   env                     = var.env
   tags                    = var.tags
@@ -21,8 +21,8 @@ module "vpc" {
   backup_retention_period = each.value["backup_retention_period"]
   preferred_backup_window = each.value["preferred_backup_window"]
   skip_final_snapshot     = each.value["skip_final_snapshot"]
-  subnet_ids              = each.value["subnet_ids"]
-}*/
+  subnet_ids              = local.db_subnet_ids
+}
 
 output "vpc" {
   value = local.db_subnet_ids
