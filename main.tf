@@ -15,10 +15,10 @@ module "docdb" {
   source                  = "git::https://github.com/Praveen-Gaju/tf-module-docdb.git"
   env                     = var.env
   tags                    = var.tags
-  for_each                = var.docdb
 
   subnet_ids              = local.db_subnet_ids
 
+  for_each                = var.docdb
   engine                  = each.value["engine"]
   engine_version          = each.value["engine_version"]
   backup_retention_period = each.value["backup_retention_period"]
@@ -28,6 +28,15 @@ module "docdb" {
   instance_class          = each.value["instance_class"]
 }
 
-output "vpc" {
-  value = local.db_subnet_ids
+module "rds" {
+  source                  = "git::https://github.com/Praveen-Gaju/tf-module-rds.git"
+  env                     = var.env
+  tags                    = var.tags
+  subnet_ids              = local.db_subnet_ids
+
+  for_each                = var.rds
+  engine                  = each.value["engine"]
+  engine_version          = each.value["engine_version"]
+  backup_retention_period = each.value["backup_retention_period"]
+  preferred_backup_window = each.value["preferred_backup_window"]
 }
