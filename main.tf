@@ -44,7 +44,7 @@ module "rds" {
 }
 
 module "elasticache" {
-  source = "git::https://github.com/Praveen-Gaju/tf-module-elasticache.git"
+  source                  = "git::https://github.com/Praveen-Gaju/tf-module-elasticache.git"
   env                     = var.env
   tags                    = var.tags
   subnet_ids              = local.db_subnet_ids
