@@ -11,7 +11,7 @@ module "vpc" {
 
 }
 
-module "docdb" {
+/*module "docdb" {
   source                  = "git::https://github.com/Praveen-Gaju/tf-module-docdb.git"
   env                     = var.env
   tags                    = var.tags
@@ -64,7 +64,7 @@ module "rabbitmq" {
 
   for_each                = var.rabbitmq
   instance_type           = each.value["instance_type"]
-}
+}*/
 
 module "alb" {
   source = "git::https://github.com/Praveen-Gaju/tf-module-alb.git"
