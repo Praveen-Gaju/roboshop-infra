@@ -93,7 +93,7 @@ rabbitmq = {
 
 alb = {
   public = {
-    subnet_name = "web"
+    subnet_name = "public"
     name = "public"
     internal = false
     load_balancer_type = "application"
@@ -104,6 +104,56 @@ alb = {
     name = "private"
     internal = true
     load_balancer_type = "application"
+  }
+}
 
+app = {
+  catalogue = {
+    component             = "catalogue"
+    instance_type         = "t3.nano"
+    desired_capacity      = 1
+    max_size              = 4
+    min_size              = 1
+    subnet_name           = "app"
+  }
+  cart = {
+    component             = "cart"
+    instance_type         = "t3.nano"
+    desired_capacity      = 1
+    max_size              = 4
+    min_size              = 1
+    subnet_name           = "app"
+  }
+  user = {
+    component             = "user"
+    instance_type         = "t3.micro"
+    desired_capacity      = 1
+    max_size              = 4
+    min_size              = 1
+    subnet_name           = "app"
+  }
+  shipping = {
+    component             = "shipping"
+    instance_type         = "t3.micro"
+    desired_capacity      = 1
+    max_size              = 4
+    min_size              = 1
+    subnet_name           = "app"
+  }
+  dispatch = {
+    component             = "dispatch"
+    instance_type         = "t3.micro"
+    desired_capacity      = 1
+    max_size              = 4
+    min_size              = 1
+    subnet_name           = "app"
+  }
+  frontend = {
+    component             = "frontend"
+    instance_type         = "t3.nano"
+    desired_capacity      = 1
+    max_size              = 4
+    min_size              = 1
+    subnet_name           = "web"
   }
 }
