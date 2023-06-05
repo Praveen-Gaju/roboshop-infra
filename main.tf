@@ -101,3 +101,7 @@ module "app" {
   allow_app_to            = lookup(local.subnet_cidr, each.value["allow_app_to"], null)
   alb_dns_name            = lookup(lookup(lookup(module.alb, each.value["alb"], null), "alb", null), "dns_name", null)
 }
+
+output "alb" {
+  value = module.alb
+}
