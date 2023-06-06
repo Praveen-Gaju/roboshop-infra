@@ -1,10 +1,10 @@
 parameters = [
    #frontend parameters
-   { name= "dev.frontend.catalogue_url", value = "http://catalogue-dev.devopspract.online:8080/", type= "String"},
-   { name= "dev.frontend.user_url", value = "http://user-dev.devopspract.online:8080/", type= "String"},
-   { name= "dev.frontend.cart_url", value = "http://cart-dev.devopspract.online:8080/", type= "String"},
-   { name= "dev.frontend.shipping_url", value = "http://shipping-dev.devopspract.online:8080/", type= "String"},
-   { name= "dev.frontend.payment_url", value = "http://payment-dev.devopspract.online:8080/", type= "String"},
+   { name= "dev.frontend.catalogue_url", value = "http://catalogue-dev.devopspract.online:80/", type= "String"},
+   { name= "dev.frontend.user_url", value = "http://user-dev.devopspract.online:80/", type= "String"},
+   { name= "dev.frontend.cart_url", value = "http://cart-dev.devopspract.online:80/", type= "String"},
+   { name= "dev.frontend.shipping_url", value = "http://shipping-dev.devopspract.online:80/", type= "String"},
+   { name= "dev.frontend.payment_url", value = "http://payment-dev.devopspract.online:80/", type= "String"},
    #user Parameters
    { name= "dev.user.mongo", value = "true", type= "String"},
    { name= "dev.user.redis_host", value = "redis-dev.devopspract.online", type= "String"},
