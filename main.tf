@@ -28,7 +28,7 @@ module "docdb" {
   no_of_instances         = each.value["no_of_instances"]
   instance_class          = each.value["instance_class"]
 
-  allow_subnets           = lookup(local.subnet_cidr, each.value["subnets"], null)
+  allow_subnets           = lookup(local.subnet_cidr, each.value["allow_subnets"], null)
 }
 
 module "rds" {
