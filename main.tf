@@ -31,7 +31,6 @@ module "docdb" {
   allow_subnets           = lookup(local.subnet_cidr, each.value["allow_subnets"], null)
 }
 
-/*
 module "rds" {
   source                  = "git::https://github.com/Praveen-Gaju/tf-module-rds.git"
   env                     = var.env
@@ -108,4 +107,3 @@ module "app" {
   alb_dns_name            = lookup(lookup(lookup(module.alb, each.value["alb"], null), "alb", null), "dns_name", null)
   listener_arn            = lookup(lookup(lookup(module.alb, each.value["alb"], null), "listener", null), "arn", null)
 }
-*/
