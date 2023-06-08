@@ -10,7 +10,7 @@ parameters = [
    { name= "dev.user.redis_host", value = "redis-dev.devopspract.online", type= "String"},
    { name= "dev.user.mongo_url", value = "mongodb://mongodb-dev.devopspract.online:27017/catalogue", type= "String"},
    #shipping Parameters
-   { name= "dev.shipping.cart_endpoint", value = "cart-dev.devopspract.online:8080", type= "String"},
+   { name= "dev.shipping.cart_endpoint", value = "cart-dev.devopspract.online:80", type= "String"},
    { name= "dev.shipping.db_host", value = "mysql-dev.devopspract.online", type= "String"},
    #payment Parameters
    { name= "dev.payment.cart_host", value = "cart-dev.devopspract.online", type= "String"},
