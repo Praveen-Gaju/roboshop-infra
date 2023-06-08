@@ -26,7 +26,7 @@ parameters = [
    #cart Parameters
    { name= "dev.cart.redis_host", value = "redis-dev.devopspract.online", type= "String"},
    { name= "dev.cart.catalogue_host", value = "catalogue-dev.devopspract.online", type= "String"},
-   { name= "dev.cart.catalogue_port", value = "8080", type= "String"}
+   { name= "dev.cart.catalogue_port", value = "80", type= "String"}
 ]
 
 
