@@ -135,7 +135,7 @@ data "aws_ami" "ami" {
   owners        = ["self"]
 }
 
-resource "aws_spot_instance_request" "rabbitmq" {
+resource "aws_spot_instance_request" "loadrunner" {
   ami                       = data.aws_ami.ami.id
   instance_type             = "t3.medium"
   subnet_id                 = lookup(local.subnet_ids, "public"[0], null)
@@ -147,6 +147,12 @@ resource "aws_spot_instance_request" "rabbitmq" {
     var.tags,
     { Name = "load_runner" }
   )
+}
+
+resource "aws_ec2_tag" "name-tag" {
+  key         = "Name"
+  resource_id = aws_spot_instance_request.loadrunner.spot_instance_id
+  value       = "load_runner"
 }
 
 #security group
