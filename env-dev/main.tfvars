@@ -1,6 +1,7 @@
-env           = "dev"
-bastion_cidr  = [ "172.31.12.181/32" ]
-dns_domain    = "devopspract.online"
+env                 = "dev"
+bastion_cidr        = [ "172.31.12.181/32" ]
+monitoring_nodes    = ["172.31.25.11/32"]
+dns_domain          = "devopspract.online"
 
 vpc = {
   main = {

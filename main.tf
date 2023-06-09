@@ -109,6 +109,7 @@ module "app" {
   vpc_id                  = module.vpc["main"].vpc_id
   bastion_cidr            = var.bastion_cidr
   dns_domain              = var.dns_domain
+  monitoring_nodes        = var.monitoring_nodes
 
   for_each                = var.app
   component               = each.value["component"]

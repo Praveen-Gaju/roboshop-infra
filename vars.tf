@@ -13,3 +13,5 @@ variable "app" {}
 
 variable "bastion_cidr" {}
 variable "dns_domain" {}
+
+variable "monitoring_nodes" {}
