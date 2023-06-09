@@ -138,7 +138,7 @@ data "aws_ami" "ami" {
 resource "aws_spot_instance_request" "loadrunner" {
   ami                       = data.aws_ami.ami.id
   instance_type             = "t3.medium"
-  subnet_id                 = lookup(local.subnet_ids, "public"[0], null)
+  subnet_id                 = lookup(local.subnet_ids, "public", null)[0]
   wait_for_fulfillment      = true
   vpc_security_group_ids    = [aws_security_group.load_security.id]
 
