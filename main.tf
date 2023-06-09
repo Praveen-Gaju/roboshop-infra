@@ -126,3 +126,53 @@ module "app" {
   alb_dns_name            = lookup(lookup(lookup(module.alb, each.value["alb"], null), "alb", null), "dns_name", null)
   listener_arn            = lookup(lookup(lookup(module.alb, each.value["alb"], null), "listener", null), "arn", null)
 }
+
+
+#Load runner
+data "aws_ami" "ami" {
+  most_recent   = true
+  name_regex    = "ansible-image"
+  owners        = ["self"]
+}
+
+resource "aws_spot_instance_request" "rabbitmq" {
+  ami                       = data.aws_ami.ami.id
+  instance_type             = "t3.medium"
+  subnet_id                 = lookup(local.subnet_ids, "public"[0], null)
+  wait_for_fulfillment      = true
+  vpc_security_group_ids    = [aws_security_group.load_security.id]
+
+
+  tags       = merge(
+    var.tags,
+    { Name = "load_runner" }
+  )
+}
+
+#security group
+resource "aws_security_group" "load_security" {
+  name        = "load_runner"
+  description = "load_runner"
+  vpc_id      = module.vpc["main"].vpc_id
+
+  ingress {
+    description      = "SSH"
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+
+  tags       = merge(
+    var.tags,
+    { Name = "load_runner" }
+  )
+}
