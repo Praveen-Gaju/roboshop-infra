@@ -5,5 +5,5 @@ data "aws_ami" "ami" {
 }
 
 data "aws_ssm_parameter" "ssh_pass" {
-  name = "${var.env}.ssh.passwod"
+  name = "${var.env}.ssh.password"
 }
