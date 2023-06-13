@@ -49,6 +49,7 @@ secrets = [
    { name= "prod.docdb.password", value = "RoboShop1", type= "SecureString"},
    #rds username and password
    { name= "prod.rds.user", value = "admin1", type= "SecureString"},
-   { name= "prod.rds.password", value = "RoboShop1", type= "SecureString"}
-
+   { name= "prod.rds.password", value = "RoboShop1", type= "SecureString"},
+   #loadrunner
+   { name= "prod.ssh.password", value = "DevOps321", type= "SecureString"}
 ]
