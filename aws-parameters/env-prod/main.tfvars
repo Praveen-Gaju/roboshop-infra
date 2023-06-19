@@ -51,5 +51,8 @@ secrets = [
    { name= "prod.rds.user", value = "admin1", type= "SecureString"},
    { name= "prod.rds.password", value = "RoboShop1", type= "SecureString"},
    #loadrunner
-   { name= "prod.ssh.password", value = "DevOps321", type= "SecureString"}
+   { name= "prod.ssh.password", value = "DevOps321", type= "SecureString"},
+   #sonarqube
+   { name= "prod.sonar.username", value = "admin", type= "SecureString"},
+   { name= "prod.sonar.password", value = "admin123", type= "SecureString"}
 ]
