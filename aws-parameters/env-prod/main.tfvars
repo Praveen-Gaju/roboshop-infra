@@ -53,6 +53,6 @@ secrets = [
    #loadrunner
    { name= "prod.ssh.password", value = "DevOps321", type= "SecureString"},
    #sonarqube
-   { name= "prod.sonar.username", value = "admin", type= "SecureString"},
-   { name= "prod.sonar.password", value = "admin123", type= "SecureString"}
+   { name= "/sonarqube/username", value = "admin", type= "SecureString"},
+   { name= "/sonarqube/password", value = "admin123", type= "SecureString"}
 ]
