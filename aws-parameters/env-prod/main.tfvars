@@ -54,5 +54,9 @@ secrets = [
    { name= "prod.ssh.password", value = "DevOps321", type= "SecureString"},
    #sonarqube
    { name= "/sonarqube/username", value = "admin", type= "SecureString"},
-   { name= "/sonarqube/password", value = "admin123", type= "SecureString"}
+   { name= "/sonarqube/password", value = "admin123", type= "SecureString"},
+   #nexus username and password
+   { name= "prod.nexus.username", value = "admin", type= "SecureString"},
+   { name= "prod.nexus.password", value = "admin123", type= "SecureString"}
+
 ]
