@@ -129,7 +129,7 @@ module "app" {
 }
 
 
-/*#Load runner
+#Load runner
 
 resource "aws_spot_instance_request" "loadrunner" {
   ami                       = data.aws_ami.ami.id
@@ -164,4 +164,4 @@ resource "null_resource" "load-gen" {
       "docker pull robotshop/rs-load"
     ]
   }
-}*/
+}
