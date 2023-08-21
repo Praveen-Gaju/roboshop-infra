@@ -1,5 +1,5 @@
 env                 = "prod"
-bastion_cidr        = [ "172.31.12.181/32" ]
+bastion_cidr        = [ "172.31.90.159/32" ]
 monitoring_nodes    = ["172.31.25.11/32"]
 dns_domain          = "devopspract.online"
 
