@@ -176,8 +176,9 @@ module "minikube" {
   aws_instance_type   = "t2.small"
   ssh_public_key      = "~/.ssh/id_rsa.pub"
   aws_subnet_id       = lookup(local.subnet_ids,"public", null)[0]
-  hosted_zone         = "Z10378632KDOC11M5RXOI"
+  hosted_zone         = "devopspract.online"
   hosted_zone_private = false
+  
 
   tags = {
     Name = "Minikube"
