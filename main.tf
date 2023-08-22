@@ -173,14 +173,11 @@ module "minikube" {
 
   aws_region          = "us-east-1"
   cluster_name        = "minikube"
-  aws_instance_type   = "t2.small"
+  aws_instance_type   = "t3.medium"
   ssh_public_key      = "~/.ssh/id_rsa.pub"
   aws_subnet_id       = lookup(local.subnet_ids,"public", null)[0]
   hosted_zone         = "devopspract.online"
   hosted_zone_private = false
-  
-
-
 
   tags = {
     Name = "Minikube"
