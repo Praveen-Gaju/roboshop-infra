@@ -10,7 +10,7 @@ module "vpc" {
   private_subnets       = each.value["private_subnets"]
 
 }
-/*
+
 module "docdb" {
   source                  = "git::https://github.com/Praveen-Gaju/tf-module-docdb.git"
   env                     = var.env
@@ -85,6 +85,7 @@ module "rabbitmq" {
   allow_subnets           = lookup(local.subnet_cidr, each.value["allow_subnets"], null)
 }
 
+/*
 module "alb" {
   source = "git::https://github.com/Praveen-Gaju/tf-module-alb.git"
   env                     = var.env
