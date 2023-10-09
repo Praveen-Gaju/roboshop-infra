@@ -13,10 +13,10 @@ parameters = [
    { name= "prod.shipping.cart_endpoint", value = "cart:8080", type= "String"},
    { name= "prod.shipping.db_host", value = "mysql-prod.devopspract.online", type= "String"},
    #payment Parameters
-   { name= "prod.payment.cart_host", value = "cart-prod.devopspract.online", type= "String"},
-   { name= "prod.payment.cart_port", value = "80", type= "String"},
-   { name= "prod.payment.user_host", value = "user-prod.devopspract.online", type= "String"},
-   { name= "prod.payment.user_port", value = "80", type= "String"},
+   { name= "prod.payment.cart_host", value = "cart", type= "String"},
+   { name= "prod.payment.cart_port", value = "8080", type= "String"},
+   { name= "prod.payment.user_host", value = "user", type= "String"},
+   { name= "prod.payment.user_port", value = "8080", type= "String"},
    { name= "prod.payment.amqp_host", value = "rabbitmq-prod.devopspract.online", type= "String"},
    #dispatch Parameters
    { name= "prod.dispatch.amqp_host", value = "rabbitmq-prod.devopspract.online", type= "String"},
