@@ -130,44 +130,6 @@ module "app" {
 }
 */
 
-#Load runner
-
-resource "aws_spot_instance_request" "loadrunner" {
-  ami                       = data.aws_ami.ami.id
-  instance_type             = "t3.medium"
-  wait_for_fulfillment      = true
-  vpc_security_group_ids    = ["Allow_All"]
-
-
-  tags       = merge(
-    var.tags,
-    { Name = "load_runner" }
-  )
-}
-
-resource "aws_ec2_tag" "name-tag" {
-  key         = "Name"
-  resource_id = aws_spot_instance_request.loadrunner.spot_instance_id
-  value       = "load_runner"
-}
-
-resource "null_resource" "load-gen" {
-  provisioner "remote-exec" {
-    connection {
-      host      = aws_spot_instance_request.loadrunner.public_ip
-      user      = "root"
-      password  = data.aws_ssm_parameter.ssh_pass.value
-    }
-    inline = [
-      "curl -s -L https://get.docker.com | bash",
-      "systemctl enable docker",
-      "systemctl start docker",
-      "docker pull robotshop/rs-load"
-    ]
-  }
-}
-
-
 #Minikube Module
 /*
 module "minikube" {
@@ -202,8 +164,42 @@ output "KUBE_CONFIG" {
 }
 */
 
-#EKS Module
+#Load runner
+resource "aws_spot_instance_request" "loadrunner" {
+  ami                       = data.aws_ami.ami.id
+  instance_type             = "t3.medium"
+  wait_for_fulfillment      = true
+  vpc_security_group_ids    = ["Allow_All"]
 
+  tags       = merge(
+    var.tags,
+    { Name = "load_runner" }
+  )
+}
+
+resource "aws_ec2_tag" "name-tag" {
+  key         = "Name"
+  resource_id = aws_spot_instance_request.loadrunner.spot_instance_id
+  value       = "load_runner"
+}
+
+resource "null_resource" "load-gen" {
+  provisioner "remote-exec" {
+    connection {
+      host      = aws_spot_instance_request.loadrunner.public_ip
+      user      = "root"
+      password  = data.aws_ssm_parameter.ssh_pass.value
+    }
+    inline = [
+      "curl -s -L https://get.docker.com | bash",
+      "systemctl enable docker",
+      "systemctl start docker",
+      "docker pull robotshop/rs-load"
+    ]
+  }
+}
+
+#EKS Module
 module "eks" {
   source             = "github.com/r-devops/tf-module-eks"
   ENV                = var.env
