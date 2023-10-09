@@ -128,7 +128,7 @@ module "app" {
   alb_dns_name            = lookup(lookup(lookup(module.alb, each.value["alb"], null), "alb", null), "dns_name", null)
   listener_arn            = lookup(lookup(lookup(module.alb, each.value["alb"], null), "listener", null), "arn", null)
 }
-
+*/
 
 #Load runner
 
@@ -166,7 +166,7 @@ resource "null_resource" "load-gen" {
     ]
   }
 }
-*/
+
 
 #Minikube Module
 /*
@@ -209,7 +209,7 @@ module "eks" {
   ENV                = var.env
   PRIVATE_SUBNET_IDS = lookup(local.subnet_ids, "app", null)
   PUBLIC_SUBNET_IDS  = lookup(local.subnet_ids, "public", null)
-  DESIRED_SIZE       = 2
-  MAX_SIZE           = 2
-  MIN_SIZE           = 2
+  DESIRED_SIZE       = 1
+  MAX_SIZE           = 1
+  MIN_SIZE           = 1
 }
